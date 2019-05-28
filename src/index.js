@@ -11,9 +11,9 @@ const app = express()
 // Make sure that Heroku apps won't enter in sleep mode
 
 setInterval(() => {
-  http.get('https://rn-expenses-backend.herokuapp.com/')
+  http.get('http://rn-expenses-backend.herokuapp.com/')
 
-  http.get('https://rn-expenses-app-5875f9473a.herokuapp.com/')
+  http.get('http://rn-expenses-app-5875f9473a.herokuapp.com/')
 }, 300000)
 
 const port = process.env.PORT || 4000
