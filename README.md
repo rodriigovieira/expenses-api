@@ -13,7 +13,7 @@ This is an API made with GraphQL and Prisma, and it features the following:
 
 This project is hosted on Heroku, and if you'd like, you can simply access it's live preview.
 
-The project is available at:
+The project is available at: https://rn-expenses-backend.herokuapp.com/
 
 # Installation
 
