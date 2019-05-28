@@ -1,0 +1,8 @@
+endpoint: https://rn-expenses-app-5875f9473a.herokuapp.com/expenses_api/dev
+datamodel: datamodel.prisma
+
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client
+  - generator: graphql-schema
+    output: ../src/generated/prisma.graphql

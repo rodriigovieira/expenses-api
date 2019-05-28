@@ -1,0 +1,20 @@
+type User {
+  id: ID! @id
+  email: String! @unique
+  password: String!
+  name: String!
+  expenses: [Expense!]! @relation(name: "UserToExpense", onDelete: CASCADE)
+}
+
+type Expense {
+  id: ID! @id
+  name: String!
+  value: Float!
+  type: ExpenseType!
+  author: User! @relation(name: "UserToExpense", onDelete: CASCADE)
+}
+
+enum ExpenseType {
+  POSITIVE
+  NEGATIVE
+}
