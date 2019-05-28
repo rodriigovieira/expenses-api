@@ -15,6 +15,8 @@ This project is hosted on Heroku, and if you'd like, you can simply access it's 
 
 The project is available at: https://rn-expenses-backend.herokuapp.com/
 
+This page will open the GraphQL Playground, which includes all the documentation regarding which queries and mutations you can perform, and which arguments each one of those requires.
+
 # Installation
 
 If you'd like to install this project locally, simply follow these steps:
@@ -74,7 +76,7 @@ Finally!
 To start the project, run:
 
 ```
-yarn start
+yarn dev
 ```
 
 This command will configure all environment variables and then start the server.
