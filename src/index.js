@@ -1,3 +1,4 @@
+const http = require('http')
 const express = require('express')
 const { ApolloServer } = require('apollo-server-express')
 
@@ -6,6 +7,14 @@ const resolvers = require('./resolvers')
 const { prisma } = require('./generated/prisma-client')
 
 const app = express()
+
+// Make sure that Heroku apps won't enter in sleep mode
+
+setInterval(() => {
+  http.get('https://rn-expenses-backend.herokuapp.com/')
+
+  http.get('https://rn-expenses-app-5875f9473a.herokuapp.com/')
+}, 300000)
 
 const port = process.env.PORT || 4000
 
