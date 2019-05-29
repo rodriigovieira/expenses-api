@@ -44,27 +44,22 @@ const auth = {
     if (!user) throw new Error('No user with this email.')
 
     const emailContent = {
-      from: 'sistema@bestcleanlavanderia.com.br',
+      from: 'admin@rodrigovieira.work',
       to: email,
-      subject: 'Recuperação de Senha BestClean',
+      subject: 'Password Recovery Expenses App',
       html: `
-        <h1><center>Recuperação de Senha BestClean</center></h1>
+        <h1><center>Password Recovery Expenses App</center></h1>
 
         <p>
-          Você está recebendo esse e-mail porque você preencheu o formulário de recuperação de senha na página de login do sistema da BestClean.
+          You are receiving this email because the password recovery form in the Expenses App system was filled.
         </p><br/>
 
         <p>
-          Para poder recuperar o seu e-mail, <a href="https://bestcleanlavanderia.com.br/recuperar/${generateToken(
+         To recover your password, <a href="expenses-rn-app://recover/${generateToken(
     user.id
-  )}"><strong>clique aqui</strong></a> e siga os passos informados no website.
+  )}"><strong>click here</strong></a> and follow the provided steps.
+  PS: You must be on your mobile phone in order for this to work.
         </p><br/>
-
-        <p>
-          Caso o link acima não funcione, copie esse link e cole no navegador: https://bestcleanlavanderia.com.br/recuperar/${generateToken(
-    user.id
-  )}
-        </p>
       `
     }
 
