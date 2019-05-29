@@ -55,14 +55,16 @@ const auth = {
         </p><br/>
 
         <p>
-         To recover your password, <a href="expenses-rn-app://recover/${generateToken(
+         To recover your password, <a href="https://rn-expenses-backend.herokuapp.com/recover/${generateToken(
     user.id
   )}"><strong>click here</strong></a> and follow the provided steps.
   PS: You must be on your mobile phone in order for this to work.
         </p><br/>
 
         <p>
-          If the button above does not work, you can copy this URL: expenses-rn-app://recover/${generateToken(user.id)} and paste it into Safari.
+          If the button above does not work, you can copy this URL: https://rn-expenses-backend.herokuapp.com/recover/${generateToken(
+    user.id
+  )} and paste it into Safari.
         </p>
       `
     }

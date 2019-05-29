@@ -36,4 +36,12 @@ app.get('/', (req, res) => {
   res.end()
 })
 
+app.get('/recover/:token', (req, res) => {
+  const { token } = req.params
+
+  res.writeHead(301, { Location: `expenses-rn-app://recover/${token}` })
+
+  res.end()
+})
+
 app.listen(port, () => console.log(`The server is being executed at port ${port}!`))
