@@ -60,6 +60,10 @@ const auth = {
   )}"><strong>click here</strong></a> and follow the provided steps.
   PS: You must be on your mobile phone in order for this to work.
         </p><br/>
+
+        <p>
+          If the button above does not work, you can copy this URL: expenses-rn-app://recover/${generateToken(user.id)} and paste it into Safari.
+        </p>
       `
     }
 
