@@ -18,6 +18,7 @@ type BatchPayload {
 type Expense {
   id: ID!
   name: String!
+  description: String!
   value: Float!
   type: ExpenseType!
   author: User!
@@ -32,6 +33,7 @@ type ExpenseConnection {
 input ExpenseCreateInput {
   id: ID
   name: String!
+  description: String!
   value: Float!
   type: ExpenseType!
   author: UserCreateOneWithoutExpensesInput!
@@ -45,6 +47,7 @@ input ExpenseCreateManyWithoutAuthorInput {
 input ExpenseCreateWithoutAuthorInput {
   id: ID
   name: String!
+  description: String!
   value: Float!
   type: ExpenseType!
 }
@@ -59,6 +62,8 @@ enum ExpenseOrderByInput {
   id_DESC
   name_ASC
   name_DESC
+  description_ASC
+  description_DESC
   value_ASC
   value_DESC
   type_ASC
@@ -68,6 +73,7 @@ enum ExpenseOrderByInput {
 type ExpensePreviousValues {
   id: ID!
   name: String!
+  description: String!
   value: Float!
   type: ExpenseType!
 }
@@ -101,6 +107,20 @@ input ExpenseScalarWhereInput {
   name_not_starts_with: String
   name_ends_with: String
   name_not_ends_with: String
+  description: String
+  description_not: String
+  description_in: [String!]
+  description_not_in: [String!]
+  description_lt: String
+  description_lte: String
+  description_gt: String
+  description_gte: String
+  description_contains: String
+  description_not_contains: String
+  description_starts_with: String
+  description_not_starts_with: String
+  description_ends_with: String
+  description_not_ends_with: String
   value: Float
   value_not: Float
   value_in: [Float!]
@@ -143,6 +163,7 @@ enum ExpenseType {
 
 input ExpenseUpdateInput {
   name: String
+  description: String
   value: Float
   type: ExpenseType
   author: UserUpdateOneRequiredWithoutExpensesInput
@@ -150,12 +171,14 @@ input ExpenseUpdateInput {
 
 input ExpenseUpdateManyDataInput {
   name: String
+  description: String
   value: Float
   type: ExpenseType
 }
 
 input ExpenseUpdateManyMutationInput {
   name: String
+  description: String
   value: Float
   type: ExpenseType
 }
@@ -179,6 +202,7 @@ input ExpenseUpdateManyWithWhereNestedInput {
 
 input ExpenseUpdateWithoutAuthorDataInput {
   name: String
+  description: String
   value: Float
   type: ExpenseType
 }
@@ -223,6 +247,20 @@ input ExpenseWhereInput {
   name_not_starts_with: String
   name_ends_with: String
   name_not_ends_with: String
+  description: String
+  description_not: String
+  description_in: [String!]
+  description_not_in: [String!]
+  description_lt: String
+  description_lte: String
+  description_gt: String
+  description_gte: String
+  description_contains: String
+  description_not_contains: String
+  description_starts_with: String
+  description_not_starts_with: String
+  description_ends_with: String
+  description_not_ends_with: String
   value: Float
   value_not: Float
   value_in: [Float!]

@@ -12,6 +12,7 @@ const typeDefs = gql`
   type Expense {
     id: ID!
     name: String!
+    description: String!
     value: Float!
     type: ExpenseType!
     author: User!
@@ -45,6 +46,7 @@ const typeDefs = gql`
 
   input CreateExpenseInput {
     name: String!
+    description: String!
     value: Float!
     type: ExpenseType!
     author: ID!

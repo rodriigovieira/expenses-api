@@ -9,6 +9,7 @@ type User {
 type Expense {
   id: ID! @id
   name: String!
+  description: String!
   value: Float!
   type: ExpenseType!
   author: User! @relation(name: "UserToExpense", onDelete: CASCADE)

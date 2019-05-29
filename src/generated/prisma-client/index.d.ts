@@ -147,6 +147,8 @@ export type ExpenseOrderByInput =
   | "id_DESC"
   | "name_ASC"
   | "name_DESC"
+  | "description_ASC"
+  | "description_DESC"
   | "value_ASC"
   | "value_DESC"
   | "type_ASC"
@@ -166,6 +168,7 @@ export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
 export interface ExpenseUpdateInput {
   name?: Maybe<String>;
+  description?: Maybe<String>;
   value?: Maybe<Float>;
   type?: Maybe<ExpenseType>;
   author?: Maybe<UserUpdateOneRequiredWithoutExpensesInput>;
@@ -238,6 +241,7 @@ export interface UserUpdateManyMutationInput {
 export interface ExpenseCreateInput {
   id?: Maybe<ID_Input>;
   name: String;
+  description: String;
   value: Float;
   type: ExpenseType;
   author: UserCreateOneWithoutExpensesInput;
@@ -268,6 +272,7 @@ export interface UserCreateWithoutExpensesInput {
 
 export interface ExpenseUpdateWithoutAuthorDataInput {
   name?: Maybe<String>;
+  description?: Maybe<String>;
   value?: Maybe<Float>;
   type?: Maybe<ExpenseType>;
 }
@@ -275,6 +280,7 @@ export interface ExpenseUpdateWithoutAuthorDataInput {
 export interface ExpenseCreateWithoutAuthorInput {
   id?: Maybe<ID_Input>;
   name: String;
+  description: String;
   value: Float;
   type: ExpenseType;
 }
@@ -353,6 +359,7 @@ export interface UserUpdateOneRequiredWithoutExpensesInput {
 
 export interface ExpenseUpdateManyDataInput {
   name?: Maybe<String>;
+  description?: Maybe<String>;
   value?: Maybe<Float>;
   type?: Maybe<ExpenseType>;
 }
@@ -366,6 +373,7 @@ export interface ExpenseCreateManyWithoutAuthorInput {
 
 export interface ExpenseUpdateManyMutationInput {
   name?: Maybe<String>;
+  description?: Maybe<String>;
   value?: Maybe<Float>;
   type?: Maybe<ExpenseType>;
 }
@@ -399,6 +407,20 @@ export interface ExpenseWhereInput {
   name_not_starts_with?: Maybe<String>;
   name_ends_with?: Maybe<String>;
   name_not_ends_with?: Maybe<String>;
+  description?: Maybe<String>;
+  description_not?: Maybe<String>;
+  description_in?: Maybe<String[] | String>;
+  description_not_in?: Maybe<String[] | String>;
+  description_lt?: Maybe<String>;
+  description_lte?: Maybe<String>;
+  description_gt?: Maybe<String>;
+  description_gte?: Maybe<String>;
+  description_contains?: Maybe<String>;
+  description_not_contains?: Maybe<String>;
+  description_starts_with?: Maybe<String>;
+  description_not_starts_with?: Maybe<String>;
+  description_ends_with?: Maybe<String>;
+  description_not_ends_with?: Maybe<String>;
   value?: Maybe<Float>;
   value_not?: Maybe<Float>;
   value_in?: Maybe<Float[] | Float>;
@@ -452,6 +474,20 @@ export interface ExpenseScalarWhereInput {
   name_not_starts_with?: Maybe<String>;
   name_ends_with?: Maybe<String>;
   name_not_ends_with?: Maybe<String>;
+  description?: Maybe<String>;
+  description_not?: Maybe<String>;
+  description_in?: Maybe<String[] | String>;
+  description_not_in?: Maybe<String[] | String>;
+  description_lt?: Maybe<String>;
+  description_lte?: Maybe<String>;
+  description_gt?: Maybe<String>;
+  description_gte?: Maybe<String>;
+  description_contains?: Maybe<String>;
+  description_not_contains?: Maybe<String>;
+  description_starts_with?: Maybe<String>;
+  description_not_starts_with?: Maybe<String>;
+  description_ends_with?: Maybe<String>;
+  description_not_ends_with?: Maybe<String>;
   value?: Maybe<Float>;
   value_not?: Maybe<Float>;
   value_in?: Maybe<Float[] | Float>;
@@ -538,6 +574,7 @@ export interface AggregateExpenseSubscription
 export interface Expense {
   id: ID_Output;
   name: String;
+  description: String;
   value: Float;
   type: ExpenseType;
 }
@@ -545,6 +582,7 @@ export interface Expense {
 export interface ExpensePromise extends Promise<Expense>, Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
+  description: () => Promise<String>;
   value: () => Promise<Float>;
   type: () => Promise<ExpenseType>;
   author: <T = UserPromise>() => T;
@@ -555,6 +593,7 @@ export interface ExpenseSubscription
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
+  description: () => Promise<AsyncIterator<String>>;
   value: () => Promise<AsyncIterator<Float>>;
   type: () => Promise<AsyncIterator<ExpenseType>>;
   author: <T = UserSubscription>() => T;
@@ -565,6 +604,7 @@ export interface ExpenseNullablePromise
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
+  description: () => Promise<String>;
   value: () => Promise<Float>;
   type: () => Promise<ExpenseType>;
   author: <T = UserPromise>() => T;
@@ -792,6 +832,7 @@ export interface UserSubscriptionPayloadSubscription
 export interface ExpensePreviousValues {
   id: ID_Output;
   name: String;
+  description: String;
   value: Float;
   type: ExpenseType;
 }
@@ -801,6 +842,7 @@ export interface ExpensePreviousValuesPromise
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
+  description: () => Promise<String>;
   value: () => Promise<Float>;
   type: () => Promise<ExpenseType>;
 }
@@ -810,6 +852,7 @@ export interface ExpensePreviousValuesSubscription
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
+  description: () => Promise<AsyncIterator<String>>;
   value: () => Promise<AsyncIterator<Float>>;
   type: () => Promise<AsyncIterator<ExpenseType>>;
 }
