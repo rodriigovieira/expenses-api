@@ -55,6 +55,7 @@ const typeDefs = gql`
     name: String
     value: Float
     type: ExpenseType
+    description: String
   }
 
   input LoginUserInput {
