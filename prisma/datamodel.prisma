@@ -12,7 +12,7 @@ type Expense {
   description: String!
   value: Float!
   type: ExpenseType!
-  author: User! @relation(name: "UserToExpense", onDelete: CASCADE)
+  author: User! @relation(name: "UserToExpense", onDelete: SET_NULL)
 }
 
 enum ExpenseType {
