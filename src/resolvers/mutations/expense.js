@@ -10,12 +10,11 @@ const expense = {
       name: data.name,
       value: data.value,
       type: data.type,
+      description: data.description,
       author: { connect: { id: userId } }
     })
 
     if (!createdExpense) throw new Error('Expense was not created.')
-
-    console.log(createdExpense)
 
     return createdExpense
   },
