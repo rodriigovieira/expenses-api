@@ -49,7 +49,6 @@ const typeDefs = gql`
     description: String!
     value: Float!
     type: ExpenseType!
-    author: ID!
   }
 
   input UpdateExpenseInput {
