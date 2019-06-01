@@ -7,7 +7,7 @@ This is an API made with GraphQL and Prisma, and it features the following:
 - Users and Expenses, where only the creators can see their expenses
 - Apollo-server and Prisma already configured
 - All CRUD operations for Users and Expenses
-- Work In Progress -> Recover Password Feature
+- Recover Password Feature
 
 # Live Preview
 
